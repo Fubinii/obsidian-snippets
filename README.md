@@ -30,7 +30,7 @@ Added/changed callouts:
 
 ## heading-rules
 
-Add simple wiki-style horizontal lines under every heading 1.
+Add simple wiki-style horizontal lines under every heading 1 (as can be seen in this readme if viewed on github).
 
 ## headings
 
