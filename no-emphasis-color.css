@@ -1,0 +1,30 @@
+/* Make bold/italic use the normal text color instead of the theme's blue */
+.theme-light,
+.theme-dark {
+  --bold-color: var(--text-normal);
+  --italic-color: var(--text-normal);
+}
+
+/* Fallback in case the theme colors the elements directly */
+.markdown-rendered strong,
+.markdown-rendered em,
+.cm-s-obsidian .cm-strong,
+.cm-s-obsidian .cm-em {
+  color: var(--text-normal) !important;
+}
+
+/* PDF export: force bold/italic to match surrounding text */
+@media print {
+  body {
+    --bold-color: inherit;
+    --italic-color: inherit;
+  }
+  .print strong,
+  .print em,
+  .print b,
+  .print i,
+  strong,
+  em {
+    color: inherit !important;
+  }
+}

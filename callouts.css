@@ -1,0 +1,214 @@
+/* =================================================================
+   Callouts
+
+   Look: neutral outline + neutral line under the title, normal
+   (uncoloured) title text, and the callout's colour used only as a
+   faint background tint.
+
+   The four values at the top of the `body` block below control the
+   look of EVERY callout at once -- built-in ones included.
+   ================================================================= */
+
+body {
+    --callout-border-width: .1em;              /* thickness of the outline and of the line under the title */
+    --callout-line-color: var(--text-normal);  /* colour of both of those lines (white in dark mode, dark in light mode) */
+    --callout-tint: 7.5%;                      /* how strongly the whole callout is tinted */
+    --callout-title-tint: 10%;                 /* extra tint on the title bar only */
+
+    /* Colour per callout type. These must be real colours (hex),
+       NOT the "r, g, b" number lists older Obsidian versions used. */
+    --callout-definition: #3333ac;
+    --callout-link: #32758f;
+    --callout-exam: #8c66f5;
+    --callout-good: #54b65b;
+    --callout-bad: #d6434d;
+    --callout-neutral: #646464;
+    --callout-deadline: #f58c1e;
+
+    --blockquote-background-color: #8e68f51b;
+    --border-radius: .5em;
+}
+
+.theme-dark {
+    --callout-algorithm: #c8c8c8;
+    --callout-hint: #f9c118;
+}
+
+.theme-light {
+    --callout-algorithm: #5a5a5a;
+    --callout-hint: #e6b414;
+}
+
+
+/* ---------- applies to every callout, built-in ones included ---------- */
+
+.callout {
+    --callout-color: var(--callout-neutral);   /* colour used by any type not listed further down */
+    padding: 0rem;
+    border-radius: var(--border-radius);
+    border-color: var(--callout-line-color);
+    background-color: color-mix(in oklch, var(--callout-color) var(--callout-tint), transparent);
+}
+
+.callout-title {
+    color: var(--text-normal);                 /* keep the title text neutral instead of coloured */
+    background-color: color-mix(in oklch, var(--callout-color) var(--callout-title-tint), transparent);
+    padding: .35rem .5rem .25rem .5rem;
+    border-radius: var(--border-radius);
+    border-bottom-right-radius: 0pt;
+    border-bottom-left-radius: 0pt;
+}
+
+/* Obsidian colours the icon separately from the title text.
+   Swap this for var(--callout-color) to get a coloured icon. */
+.callout-icon .svg-icon {
+    color: var(--text-normal);
+}
+
+.callout-content {
+    border-top: var(--callout-border-width) solid var(--callout-line-color);
+    padding: .1rem .5rem .2rem .5rem;
+    text-align: justify;
+}
+
+.callout-content p,
+.callout-content ul,
+.callout-content ol {
+    margin: 0pt;
+}
+
+.callout-content ul li,
+.callout-content ol li {
+    margin-right: 5px;
+    margin-left: 1.25rem;
+}
+
+.callout[data-callout="quote"] > .callout-content em {
+    font-style: normal;
+}
+
+.HyperMD-quote {
+    border-radius: .25rem;
+}
+
+
+/* ---------- colour and icon per callout type ---------- */
+
+.callout[data-callout="def"],
+.callout[data-callout="properties"],
+.callout[data-callout="goal"],
+.callout[data-callout="facts"],
+.callout[data-callout="fact"],
+.callout[data-callout="funfact"],
+.callout[data-callout="definition"] {
+    --callout-color: var(--callout-definition);
+    --callout-icon: "lucide-book-open";
+}
+
+.callout[data-callout="link"] {
+    --callout-color: var(--callout-link);
+    --callout-icon: "lucide-link";
+}
+
+.callout[data-callout="hint"],
+.callout[data-callout="tip"],
+.callout[data-callout="important"] {
+    --callout-color: var(--callout-hint);
+    --callout-icon: "lucide-lightbulb";
+}
+
+.callout[data-callout="exam"] {
+    --callout-color: var(--callout-exam);
+    --callout-icon: "lucide-book-check";
+}
+
+.callout[data-callout="good"],
+.callout[data-callout="pros"],
+.callout[data-callout="pro"],
+.callout[data-callout="advantages"],
+.callout[data-callout="advantage"]
+{
+    --callout-color: var(--callout-good);
+    --callout-icon: "lucide-thumbs-up";
+}
+
+
+.callout[data-callout="bad"],
+.callout[data-callout="cons"],
+.callout[data-callout="con"],
+.callout[data-callout="limitation"],
+.callout[data-callout="limitations"],
+.callout[data-callout="disadvantage"],
+.callout[data-callout="downside"],
+.callout[data-callout="downsides"],
+.callout[data-callout="disadvantages"] {
+    --callout-color: var(--callout-bad);
+    --callout-icon: "lucide-thumbs-down";
+}
+
+.callout[data-callout="problem"],
+.callout[data-callout="problems"] {
+    --callout-color: var(--callout-bad);
+    --callout-icon: "lucide-octagon-alert";
+}
+
+.callout[data-callout="motivation"] {
+    --callout-color: var(--callout-warning);
+    --callout-icon: "lucide-flame";
+}
+
+.callout[data-callout="recipe"],
+.callout[data-callout="steps"],
+.callout[data-callout="algorithm"] {
+    --callout-color: var(--callout-algorithm);
+    --callout-icon: "lucide-scroll-text";
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="warn"],
+.callout[data-callout="issue"],
+.callout[data-callout="issues"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] {
+    --callout-color: var(--callout-warning);
+    --callout-icon: "lucide-alert-triangle";
+}
+
+.callout[data-callout="deadline"],
+.callout[data-callout="deadlines"],
+.callout[data-callout="due"],
+.callout[data-callout="duedate"],
+.callout[data-callout="time"],
+.callout[data-callout="date"],
+.callout[data-callout="schedule"] {
+    --callout-color: var(--callout-deadline);
+    --callout-icon: "lucide-calendar-clock";
+}
+
+.callout[data-callout="tags"] {
+    --callout-color: var(--callout-neutral);
+    --callout-icon: "lucide-tags";
+}
+
+.callout[data-callout="status"] {
+    --callout-color: var(--callout-neutral);
+    --callout-icon: "trending-up";
+}
+
+.callout[data-callout="aside"],
+.callout[data-callout="note"],
+.callout[data-callout="notes"] {
+    --callout-color: var(--callout-neutral);
+    --callout-icon: "lucide-book";
+}
+
+.callout[data-callout="list"] {
+    --callout-color: var(--callout-neutral);
+    --callout-icon: "list";
+}
+
+.callout[data-callout="exercise"],
+.callout[data-callout="challenge"] {
+    --callout-color: var(--callout-neutral);
+    --callout-icon: "lucide-circle-question-mark";
+}

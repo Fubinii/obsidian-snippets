@@ -1,0 +1,23 @@
+/* Horizontal rule under H1 only (like the Obsidian Help vault).
+   Not a typed ---, but a border on the heading itself.
+   To include H2, add the h2 / HyperMD-header-2 selectors to each block. */
+
+/* Reading view + embeds */
+.markdown-rendered h1 {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.2em;
+}
+
+/* Live preview / editing view (styles the CodeMirror line, not an <h1>) */
+.markdown-source-view.mod-cm6 .HyperMD-header-1 {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.2em;
+}
+
+/* PDF export */
+@media print {
+  h1 {
+    border-bottom: 1px solid var(--background-modifier-border);
+    padding-bottom: 0.2em;
+  }
+}
