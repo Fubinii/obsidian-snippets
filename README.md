@@ -28,6 +28,8 @@ Added/changed callouts:
 
 *Note:* warning, note and hint overwrite built-in Obsidian callouts, the rest are new types.
 
+*To do:* Adjust this for a post-study life, where I hopefully don't need something like "exam" anymore.
+
 ## heading-rules
 
 Add simple wiki-style horizontal lines under every heading 1 (as can be seen in this readme if viewed on github).
