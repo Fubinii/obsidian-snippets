@@ -48,3 +48,7 @@ Add simple wiki-style horizontal lines under every heading 1 (as can be seen in 
 ## no-emphasis-color
 
 Make bold or italic text the same color as the regular one. This is only needed when using a theme that changes the emphasis color in the first place, like `Tokyo Night` (which is an amazing theme btw).
+
+## pdf-title
+
+Make the title stand out compared to a first heading for pdf exports. Why? Because I like using the filename as the title (sue me), and because I don't like that it is formatted as heading 1. 
