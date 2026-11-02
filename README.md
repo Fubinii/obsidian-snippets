@@ -30,6 +30,10 @@ Added/changed callouts:
 
 *To do:* Adjust this for a post-study life, where I hopefully don't need something like "exam" anymore.
 
+![image of the custom callouts, part 1](https://github.com/Fubinii/obsidian-snippets/blob/main/example_images/callouts_1.png)
+
+![image of the custom callouts, part 2](https://github.com/Fubinii/obsidian-snippets/blob/main/example_images/callouts_2.png)
+
 ## heading-rules
 
 Add simple wiki-style horizontal lines under every heading 1 (as can be seen in this readme if viewed on github).
