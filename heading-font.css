@@ -1,0 +1,10 @@
+ /* Heading fonts: one font for all heading levels, change it in --heading-font */
+body {
+  --heading-font: Helvetica, Arial, sans-serif;
+  --h1-font: var(--heading-font);
+  --h2-font: var(--heading-font);
+  --h3-font: var(--heading-font);
+  --h4-font: var(--heading-font);
+  --h5-font: var(--heading-font);
+  --h6-font: var(--heading-font);
+}
