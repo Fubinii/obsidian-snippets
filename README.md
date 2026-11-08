@@ -21,7 +21,7 @@ Added/changed callouts:
 - status
 - note (notes/aside)
 - list
-- exercise (challenge)
+- exercise (challenge/discussion)
 - link
 - hint (tip/important)
 - exam
@@ -34,16 +34,17 @@ Added/changed callouts:
 
 ![image of the custom callouts, part 2](https://github.com/Fubinii/obsidian-snippets/blob/main/example_images/callouts_2.png)
 
+## heading-font
+
+1. Change the font of all headings to Arial (or default sans-serif if Arial is missing), since I like to have text body in serif but not the headings.
+
 ## heading-rules
 
 Add simple wiki-style horizontal lines under every heading 1 (as can be seen in this readme if viewed on github).
 
-## headings
+## heading3-gap
 
-1. Change the font of all headings to Calibri, a nice sans-serif pairing for Cambria in the text body.
-2. Remove the gap between third headings (`###`) and lower to the text coming after it. Also works for Obsidian PDF exports
-
-*To Do:* This might be split up into two separate snippets.
+Remove the gap between third headings (`###`) and lower to the text coming after it. Also works for Obsidian PDF exports
 
 ## no-emphasis-color
 
